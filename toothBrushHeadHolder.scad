@@ -8,6 +8,14 @@ module halfSphere(r = 20){
     }
 }
 
+module pillar(radius = 10, height = 85){
+    linear_extrude(height = height, center = false, twist = 360, slices = 2*height, $fn = 100){
+        translate([0, 0, 0]){
+            square(radius, center = true);
+        }
+    }
+}
+
 module half(){
     difference(){
         cube([width, 30, 4]);
