@@ -40,7 +40,7 @@ module capital(height = 5, radius1 = 12, radius2 = 10){
     hull(){
         translate([0, 0, -height2]){
             rotate_extrude(angle = 360, $fn = 70){
-                translate([10, 0, 0]){
+                translate([radius2, 0, 0]){
                     circle(r = height2);
                 }
             }
@@ -48,11 +48,11 @@ module capital(height = 5, radius1 = 12, radius2 = 10){
     }
 
     translate([0, 0, -(height2+height3)]){
-        cylinder(r = 10, h = height3, $fn = 70);
+        cylinder(r = radius2, h = height3, $fn = 70);
     }
 }
 
-translate([0, 0, 53]){
-    capital();
+translate([0, 0, 52.5]){
+    capital(height = 4, radius1 = 7, radius2 = 6);
     }
-columnShaft();
+columnShaft(radius = 6, height = 50);
