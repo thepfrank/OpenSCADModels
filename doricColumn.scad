@@ -13,4 +13,21 @@ module columnShaft(radius = 10, height = 50){
     }
 }
 
-columnShaft();
+//columnShaft();
+
+module echinus(height = 3, radius1 = 12, radius2 = 10){
+    hull(){
+        translate([0, 0, height/2.]){
+            rotate_extrude(angle = 360, $fn = 50){
+                translate([radius1, 0, 0]){
+                    circle(r = height/2.);
+                }
+            }
+        }
+        translate([0, 0, -height/2.]){
+            #cylinder(r = radius2, h = height/2.);
+        }
+    }
+}
+
+echinus();
