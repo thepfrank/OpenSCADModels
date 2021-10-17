@@ -28,24 +28,23 @@ module echinus(height = 2, radius1 = 12, radius2 = 10){
     }
 }
 
-module capital(height = 8, radius1 = 9, radius2 = 8){
-    height1 = 0.21*height;
+module capital(height = 9, radius1 = 9, radius2 = 8){
+    height0 = 0.20*height;
+    height1 = 0.20*height;
     height2 = 0.03*height;
     height3 = 0.50*height;
-    height4 = 0.06*height;
-    height5 = 0.20*height;
-    
-    
-    translate([-radius1, -radius1, height1+height5/2.]){
-        cube([2*radius1, 2*radius1, height5]);
+    height4 = 0.07*height;
+        
+    translate([-radius1, -radius1, height1+height2+height3+height4+height0/2]){
+        cube([2*radius1, 2*radius1, height0]);
     }
     
-    translate([0, 0, height1/2.]){
+    translate([0, 0, height2+height3+height4+height1/2.]){
         echinus(height = height1, radius1 = radius1, radius2 = radius2);
     }
 
     hull(){
-        translate([0, 0, -height2]){
+        translate([0, 0, height3+height4+height2]){
             rotate_extrude(angle = 360, $fn = 70){
                 translate([radius2, 0, 0]){
                     circle(r = height2);
@@ -54,12 +53,12 @@ module capital(height = 8, radius1 = 9, radius2 = 8){
         }
     }
 
-    translate([0, 0, -(height2+height3)]){
-        cylinder(r = radius2, h = height3, $fn = 70);
+    translate([0, 0, 0]){
+        cylinder(r = radius2, h = height3+height4, $fn = 70);
     }
     
     hull(){
-        translate([0, 0, -(height2+height3+height4)]){
+        translate([0, 0, height4]){
             rotate_extrude(angle = 360, $fn = 70){
                 translate([radius1*0.9, 0, 0]){
                     circle(r = height4);
@@ -70,8 +69,8 @@ module capital(height = 8, radius1 = 9, radius2 = 8){
 }
 
 
-translate([0, 0, 52]){
-    capital(height = 5, radius1 = 7, radius2 = 6);
+translate([0, 0, 50]){
+    capital(height = 7, radius1 = 7, radius2 = 6);
     }
 columnShaft(radius = 6, height = 50);
 
