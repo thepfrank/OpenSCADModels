@@ -1,3 +1,5 @@
+width = 25; //only works in a limitted range, best at 25
+
 module halfSphere(r = 20){
     difference() { 
     sphere(r=r); translate([0, 0, -r])
@@ -7,19 +9,19 @@ module halfSphere(r = 20){
 
 module half(){
     difference(){
-        cube([25, 30, 4]);
-        translate([12.5, 15, 0]) #cylinder(d1 = 10, d2 = 18, h = 4);
-        translate([12.5, 10, 0]) cube([12.5, 10, 4]);
+        cube([width, 30, 4]);
+        translate([width/2., 15, 0]) cylinder(d1 = 10, d2 = 18, h = 4);
+        translate([width/2., 10, 0]) cube([width/2., 10, 4]);
     }
     
-    translate([12.5, 38, 0]) cylinder(r = 12.5, h = 4);
-    translate([12.5, 38, 0]){
+    translate([width/2., 38, 0]) cylinder(r = width/2., h = 4);
+    translate([width/2., 38, 0]){
         rotate([180, 0, 0]){
-            halfSphere(r = 12.5);
+            halfSphere(r = width/2.);
         }
     }
-    translate([12.5, 38, -81]) cylinder(r = 8, h = 85);
-    translate([12.5, 38, -84]) halfSphere(16);
+    translate([width/2., 38, -81]) cylinder(r = 8, h = 85);
+    translate([width/2., 38, -84]) halfSphere(16);
 }
 
 
