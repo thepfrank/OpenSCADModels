@@ -13,21 +13,46 @@ module columnShaft(radius = 10, height = 50){
     }
 }
 
-//columnShaft();
-
-module echinus(height = 3, radius1 = 12, radius2 = 10){
+module echinus(height = 2, radius1 = 12, radius2 = 10){
     hull(){
         translate([0, 0, height/2.]){
-            rotate_extrude(angle = 360, $fn = 50){
+            rotate_extrude(angle = 360, $fn = 70){
                 translate([radius1, 0, 0]){
                     circle(r = height/2.);
                 }
             }
         }
         translate([0, 0, -height/2.]){
-            #cylinder(r = radius2, h = height/2.);
+            cylinder(r = radius2, h = height/2.);
         }
     }
 }
 
-echinus();
+module capital(height = 5, radius1 = 12, radius2 = 10){
+    height1 = 0.4*height;
+    height2 = 0.1*height;
+    height3 = 0.5*height;
+    
+    translate([0, 0, height1/2.]){
+        echinus(height = height1, radius1 = radius1, radius2 = radius2);
+    }
+
+    hull(){
+        translate([0, 0, -height2]){
+            rotate_extrude(angle = 360, $fn = 70){
+                translate([10, 0, 0]){
+                    circle(r = height2);
+                }
+            }
+        }
+    }
+
+    translate([0, 0, -(height2+height3)]){
+        cylinder(r = 10, h = height3, $fn = 70);
+    }
+}
+
+translate([0, 0, 53]){
+    capital();
+    }
+columnShaft();
