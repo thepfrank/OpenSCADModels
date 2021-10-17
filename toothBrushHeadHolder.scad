@@ -12,8 +12,14 @@ module half(){
         translate([12.5, 10, 0]) cube([12.5, 10, 4]);
     }
     
-    translate([12.5, 38, -81]) cylinder(r1 = 12.5, r2 = 12.5, h = 85);
-    translate([12.5, 38, -84]) halfSphere(20);
+    translate([12.5, 38, 0]) cylinder(r = 12.5, h = 4);
+    translate([12.5, 38, 0]){
+        rotate([180, 0, 0]){
+            halfSphere(r = 12.5);
+        }
+    }
+    translate([12.5, 38, -81]) cylinder(r = 8, h = 85);
+    translate([12.5, 38, -84]) halfSphere(16);
 }
 
 
