@@ -1,4 +1,4 @@
-width = 25; //only works in a limitted range, best at 25
+width = 25; //only works in a limited range, best at 25
 
 module halfSphere(r = 20){
     difference() { 
