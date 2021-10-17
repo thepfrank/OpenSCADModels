@@ -29,7 +29,7 @@ module half(){
             halfSphere(r = width/2.);
         }
     }
-    translate([width/2., 38, -81]) cylinder(r = 7.5, h = 85);
+    translate([width/2., 38, -81]) pillar(radius = 7.5, height = 85);
     translate([width/2., 38, -84]) halfSphere(15);
 }
 
