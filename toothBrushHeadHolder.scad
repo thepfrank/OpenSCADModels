@@ -1,3 +1,4 @@
+$fn = 50;
 width = 25; //only works in a limited range, best at 25
 
 module halfSphere(r = 20){
@@ -20,8 +21,8 @@ module half(){
             halfSphere(r = width/2.);
         }
     }
-    translate([width/2., 38, -81]) cylinder(r = 8, h = 85);
-    translate([width/2., 38, -84]) halfSphere(16);
+    translate([width/2., 38, -81]) cylinder(r = 7.5, h = 85);
+    translate([width/2., 38, -84]) halfSphere(15);
 }
 
 
