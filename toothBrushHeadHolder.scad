@@ -1,7 +1,7 @@
-module halfSphere(){
+module halfSphere(r = 20){
     difference() { 
-    sphere(r=20); translate([0, 0, -20])
-    cube([40, 40, 40], center=true);
+    sphere(r=r); translate([0, 0, -r])
+    cube(2*r, center=true);
     }
 }
 
@@ -13,7 +13,7 @@ module half(){
     }
     
     translate([12.5, 38, -81]) cylinder(r1 = 12.5, r2 = 12.5, h = 85);
-    translate([12.5, 38, -84]) halfSphere();
+    translate([12.5, 38, -84]) halfSphere(20);
 }
 
 
