@@ -1,3 +1,4 @@
+include <doricColumn.scad>;
 $fn = 50;
 width = 25; //only works in a limited range, best at 25
 
