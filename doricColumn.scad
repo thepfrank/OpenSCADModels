@@ -69,10 +69,13 @@ module capital(height = 9, radius1 = 9, radius2 = 8){
 }
 
 
-translate([0, 0, 50]){
-    capital(height = 7, radius1 = 7, radius2 = 6);
-    }
-columnShaft(radius = 6, height = 50);
+module doricColumn(radius = 7, shaftHeight = 50, headHeight = 7){
+    translate([0, 0, shaftHeight]){
+        capital(height = headHeight, radius1 = radius, radius2 = 6/7*radius);
+        }
+    columnShaft(radius = 6/7*radius, height = shaftHeight);
+}
 
+//doricColumn();
 
 //capital();
