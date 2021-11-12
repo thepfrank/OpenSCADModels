@@ -1,3 +1,4 @@
+//holder for step motor28BYJ-48
 $fn = 80;
 
 wallThickness = 2;
