@@ -27,6 +27,7 @@ translate([0, -8, 0]){
     motorHolder();
 }
 
+/*
 translate([-5.5, -bottomDiameter/2.5, wallThickness]){
     intersection(){
         cylinder(d1 = 5, d2 = 10, h = 4);
@@ -46,7 +47,7 @@ mirror([1, 0, 0]){
         }
     }
 }
-
+*/
 
 /*
 translate([0, 30, 0]){
