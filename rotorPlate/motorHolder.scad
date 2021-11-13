@@ -12,35 +12,39 @@ boltDiameter = 4.1;
 
 totalHeight = motorDepth + wallThickness;
 
-translate([0, 0, totalHeight]){
-    rotate([180, 0, 0]){
-        difference(){
-            union(){
-                hull(){
-                    cylinder(d = motorDiameter+wallThickness, h = motorDepth+wallThickness);
+module motorHolder(){
+    translate([0, 0, totalHeight]){
+        rotate([180, 0, 0]){
+            difference(){
+                union(){
+                    hull(){
+                        cylinder(d = motorDiameter+wallThickness, h = motorDepth+wallThickness);
 
-                    translate([boltDistance/2., 0, 0]){
-                        cylinder(d = boltDiameter+wallThickness, h = motorDepth+wallThickness);
-                    }
+                        translate([boltDistance/2., 0, 0]){
+                            cylinder(d = boltDiameter+wallThickness, h = motorDepth+wallThickness);
+                        }
 
-                    translate([-boltDistance/2., 0, 0]){
-                        cylinder(d = boltDiameter+wallThickness, h = motorDepth+wallThickness);
+                        translate([-boltDistance/2., 0, 0]){
+                            cylinder(d = boltDiameter+wallThickness, h = motorDepth+wallThickness);
+                        }
                     }
                 }
-            }
 
-            cylinder(d = motorDiameter, h = motorDepth);
+                cylinder(d = motorDiameter, h = motorDepth);
 
-            translate([-10, 10, 0]){
-                cube([17.5, 17.5, motorDepth]);
-            }
-            translate([boltDistance/2., 0, 0]){
-            cylinder(d = boltDiameter, h = motorDepth+wallThickness);
-            }
-            
-            translate([-boltDistance/2., 0, 0]){
+                translate([-10, 10, 0]){
+                    cube([17.5, 17.5, motorDepth]);
+                }
+                translate([boltDistance/2., 0, 0]){
                 cylinder(d = boltDiameter, h = motorDepth+wallThickness);
+                }
+                
+                translate([-boltDistance/2., 0, 0]){
+                    cylinder(d = boltDiameter, h = motorDepth+wallThickness);
+                }
             }
         }
     }
 }
+
+//motorHolder();
