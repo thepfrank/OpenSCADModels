@@ -20,19 +20,11 @@ difference(){
         }
         cylinder(d = 23, h = topHeight);
     }
-    translate([0, 0, -11]){
+    
+    translate([0, 0, 1]){
         scale([factor, factor, 2]){
             motorCoupler();
             }
     }
-}
-    
-
-
-/*
-difference(){
-    cylinder(d = 23, h = 6);
-
     
 }
-*/
