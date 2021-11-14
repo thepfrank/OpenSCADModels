@@ -17,8 +17,10 @@ difference(){
 
 
 
-    translate([-2.5, -bottomDiameter/2., wallThickness]){
-        cube([5, 6, bottomHeight-wallThickness]);
+    translate([0, -bottomDiameter/2., wallThickness]){
+        rotate([0, 0, 45]){
+    cylinder(d1 = 6, d2 = 3, h = bottomHeight-wallThickness, $fn = 4);
+        }   
     }
 }
 
@@ -26,6 +28,8 @@ difference(){
 translate([0, -8, 0]){
     motorHolder();
 }
+
+
 
 /*
 translate([-5.5, -bottomDiameter/2.5, wallThickness]){
