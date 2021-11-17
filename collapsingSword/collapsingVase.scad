@@ -30,7 +30,7 @@ module lastVase(diameter1, diameter2, wallThickness, vaseHeight){
     }
 }
 
-
+vase(25.5, 24.5, 1.3, 185);
 vase(23, 22, 1.3, 185);
 vase(20, 19.3, 1.2, 185);
 vase(17.7, 16.6, 1.1, 185);
