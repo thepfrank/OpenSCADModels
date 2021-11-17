@@ -1,10 +1,12 @@
 $fn = 100;
 
+/*
 wallThickness = 1.3;
 vaseHeight = 185;
 
 diameter1 = 23;
 diameter2 = 22;
+*/
 
 module vase(diameter1, diameter2, wallThickness, vaseHeight){
     difference(){
@@ -27,6 +29,7 @@ module lastVase(diameter1, diameter2, wallThickness, vaseHeight){
         }
     }
 }
+
 
 vase(23, 22, 1.3, 185);
 vase(20, 19.3, 1.2, 185);
