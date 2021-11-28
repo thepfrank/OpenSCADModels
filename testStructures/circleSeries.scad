@@ -1,5 +1,8 @@
 $fn = 50;
 
+//overall height
+HEIGHT = 5;
+
 
 module circleSeries(diameter = 2, height = 2, textOn = true){
     translate([0, 0, height-2]){
@@ -32,36 +35,43 @@ module circleSeries(diameter = 2, height = 2, textOn = true){
     }
 }
 
-circleSeries(diameter = 2, height = 5, textOn = true);
 
-translate([0, -15, 0]){
-    circleSeries(diameter = 3, height = 5, textOn = false);
-    }
-
-translate([0, -30, 0]){
-    circleSeries(diameter = 4, height = 5, textOn = false);
+difference(){
+    translate([-25, -140, 0]){
+        cube([270, 155, HEIGHT]);
     }
     
-translate([0, -45, 0]){
-    circleSeries(diameter = 5, height = 5, textOn = false);
+    circleSeries(diameter = 2, height = HEIGHT, textOn = true);
+
+    translate([0, -15, 0]){
+        circleSeries(diameter = 3, height = HEIGHT, textOn = false);
     }
 
-translate([0, -60, 0]){
-    circleSeries(diameter = 6, height = 5, textOn = false);
+    translate([0, -30, 0]){
+        circleSeries(diameter = 4, height = HEIGHT, textOn = false);
     }
-    
-translate([0, -75, 0]){
-    circleSeries(diameter = 7, height = 5, textOn = false);
-    }
-
-translate([0, -90, 0]){
-    circleSeries(diameter = 8, height = 5, textOn = false);
+        
+    translate([0, -45, 0]){
+        circleSeries(diameter = 5, height = HEIGHT, textOn = false);
     }
 
-translate([0, -105, 0]){
-    circleSeries(diameter = 9, height = 5, textOn = false);
+    translate([0, -60, 0]){
+        circleSeries(diameter = 6, height = HEIGHT, textOn = false);
+    }
+        
+    translate([0, -75, 0]){
+        circleSeries(diameter = 7, height = HEIGHT, textOn = false);
     }
 
-translate([0, -120, 0]){
-    circleSeries(diameter = 10, height = 5, textOn = false);
+    translate([0, -90, 0]){
+        circleSeries(diameter = 8, height = HEIGHT, textOn = false);
     }
+
+    translate([0, -105, 0]){
+        circleSeries(diameter = 9, height = HEIGHT, textOn = false);
+    }
+
+    translate([0, -120, 0]){
+        circleSeries(diameter = 10, height = HEIGHT, textOn = false);
+    }
+}
