@@ -1,4 +1,11 @@
+//with this model you can investigate your printer and material setup for geometrical accuracy regarding circular holes
+
+//circle holes diameter start at 2 mm as for the FDM printer smaller does not seem meaningful
+
+//the number of faces should be fairly high to ensure roundness of the holes and not have obstructions due to the geometry, default is 50
 $fn = 50;
+
+//the label text is engraved 2 mm deep into the surface, thus HEIGHT should not be smaller than 2 mm
 
 //overall height
 HEIGHT = 5;
@@ -41,7 +48,7 @@ difference(){
         cube([242, 152, HEIGHT]);
     }
     
-    #circleSeries(diameter = 2, height = HEIGHT, textOn = true);
+    circleSeries(diameter = 2, height = HEIGHT, textOn = true);
 
     translate([0, -15, 0]){
         circleSeries(diameter = 3, height = HEIGHT, textOn = false);
