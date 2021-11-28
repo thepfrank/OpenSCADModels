@@ -9,8 +9,8 @@ module circleSeries(diameter = 2, height = 2, textOn = true){
         linear_extrude(height = 2){
             for(i = [0:9]){
                 if(textOn){
-                    translate([i*25 ,0 , 0]){
-                        text(text = str("0",".",i), size = 8, font = "Arial", halign = true);
+                    translate([i*23 ,0 , 0]){
+                        text(text = str("0",".",i), size = 6, font = "Arial", halign = true);
                     }
                 }
             }
@@ -19,7 +19,7 @@ module circleSeries(diameter = 2, height = 2, textOn = true){
     
     linear_extrude(height = height){
         for(i = [0:9]){
-            translate([8+i*25, -10, 0]){
+            translate([6+i*23, -10, 0]){
                 circle(d = diameter + i/10.);
             }
         }
@@ -27,8 +27,8 @@ module circleSeries(diameter = 2, height = 2, textOn = true){
     
     translate([0, 0, height-2]){
         linear_extrude(height = 2){    
-            translate([-8, -14, 0]){
-                text(text = str(diameter), font = "Arial", size = 8, halign = "right");
+            translate([-6, -13, 0]){
+                text(text = str(diameter), font = "Arial", size = 6, halign = "right");
             }
         
         }
@@ -37,11 +37,11 @@ module circleSeries(diameter = 2, height = 2, textOn = true){
 
 
 difference(){
-    translate([-25, -140, 0]){
-        cube([270, 155, HEIGHT]);
+    translate([-18, -141, 0]){
+        cube([242, 152, HEIGHT]);
     }
     
-    circleSeries(diameter = 2, height = HEIGHT, textOn = true);
+    #circleSeries(diameter = 2, height = HEIGHT, textOn = true);
 
     translate([0, -15, 0]){
         circleSeries(diameter = 3, height = HEIGHT, textOn = false);
